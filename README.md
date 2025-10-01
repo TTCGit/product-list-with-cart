@@ -1,17 +1,87 @@
-# React + Vite
+## Product List with Cart
+A simple React app that lets you browse sweets, toss them into a cart, adjust quantities, and pretend you’ll only eat one. You won’t.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Features
+- **Cart control**: add, increment, decrement, remove, and reset. Be decisive.
+- **Order confirmation modal**: it approves or judges. Mostly judges.
+- **Totals**: numbers that remind you of your choices.
+- **Stack**: React + Vite + Tailwind. No nonsense.
 
-Currently, two official plugins are available:
+### Tech Stack
+- React 19, Vite 7
+- Tailwind CSS 4
+- ESLint
+- Icons by `lucide-react`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## React Compiler
+- Node.js 18+ (20+ recommended) and npm
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Install Node.js (pick one)
+- **macOS**
+  - Homebrew: `brew install node`
+- **Windows**
+  - Winget: `winget install OpenJS.NodeJS.LTS`
+- **Ubuntu**
+  - NodeSource (recommended):
+    ```bash
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    ```
 
-## Expanding the ESLint configuration
+If you prefer `nvm`, use it. If you don’t, don’t. Just get Node installed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# product-list-with-cart
+## Getting Started
+
+```bash
+# 1) Clone
+git clone https://github.com/your-username/product-list-with-cart.git
+cd product-list-with-cart
+
+# 2) Install dependencies
+npm install
+
+# 3) Start the dev server
+npm run dev
+```
+
+Open the printed URL (usually `http://localhost:5173`). If the port is busy, change it like a competent person:
+
+```bash
+npm run dev -- --port 3000
+```
+
+## Build and Preview
+
+When you’re ready to commit to your decisions:
+
+```bash
+# Production build
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## Linting
+
+Rules exist for a reason. Follow them.
+
+```bash
+npm run lint
+```
+
+## Scripts
+
+- `npm run dev`: Start local development
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Check code quality
+
+## Notes
+
+- No environment variables needed. A rare mercy.
+- Assets live under `public/images`. Keep them there. Don’t get clever.
+- If you must use `yarn` or `pnpm`, translate the commands yourself. You’re an adult.
+
+“Never half-ass two things. Whole-ass one thing.” Run the app. Eat dessert. Repeat.
