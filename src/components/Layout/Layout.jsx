@@ -1,7 +1,7 @@
 const Layout = ({ children }) => {
   return (
-    <main className="bg-[#FCF8F6] h-screen">
-      <div className="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-start">
+    <main className="bg-egg ">
+      <div className="container px-20 md:px-0  mx-auto py-40 grid grid-cols-1  xl:grid-cols-[2fr_1fr] gap-8">
         {children}
       </div>
     </main>
