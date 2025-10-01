@@ -83,5 +83,3 @@ npm run lint
 - No environment variables needed. A rare mercy.
 - Assets live under `public/images`. Keep them there. Don’t get clever.
 - If you must use `yarn` or `pnpm`, translate the commands yourself. You’re an adult.
-
-“Never half-ass two things. Whole-ass one thing.” Run the app. Eat dessert. Repeat.
