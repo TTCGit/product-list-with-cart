@@ -27,7 +27,7 @@ const Sidebar = ({ cart, onInc, onDec, onDel, onReset }) => {
               src="/public/images/illustration-empty-cart.svg"
               alt="Empty Cart"
             />
-            <p>Aici iti apare mancare fomistule/fomisto</p>
+            <p>Aici iți apare mâncarea fomistule/fomisto</p>
           </div>
         ) : (
           <>
