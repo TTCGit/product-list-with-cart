@@ -1,6 +1,9 @@
 import { CheckCircle } from "lucide-react";
+import { useCartContext } from "../../context/CartContext";
 
-const Modal = ({ cartItems, totalPrice, onClose, onReset }) => {
+const Modal = () => {
+  const { cart, totalPrice, handleCloseModal, handleReset } = useCartContext();
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-8  w-xl overflow-y-auto">
@@ -16,12 +19,12 @@ const Modal = ({ cartItems, totalPrice, onClose, onReset }) => {
           </div>
           <button
             className="button-circle"
-            onClick={onClose}>
+            onClick={handleCloseModal}>
             x
           </button>
         </div>
         <div className="flex flex-col gap-6 p-4 rounded-md bg-egg">
-          {cartItems.map((item) => {
+          {cart.map((item) => {
             const { image, name, quantity, price } = item;
 
             return (
@@ -58,7 +61,7 @@ const Modal = ({ cartItems, totalPrice, onClose, onReset }) => {
           <button
             className="btn border border-rust bg-rust w-full font-normal
 				hover:bg-egg text-white hover:text-rust cursor-pointer"
-            onClick={onReset}>
+            onClick={handleReset}>
             Hai, comandă iară
           </button>
         </div>

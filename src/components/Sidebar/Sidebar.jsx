@@ -1,19 +1,17 @@
-import { useState } from "react";
 import Modal from "../Modal/Modal";
+import { useCartContext } from "../../context/CartContext";
 
-const Sidebar = ({ cart, onInc, onDec, onDel, onReset }) => {
-  const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
-  const [modal, setModal] = useState(false);
-
-  const handleModal = () => {
-    console.log(cart);
-    setModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setModal(false);
-  };
+const Sidebar = () => {
+  const {
+    modal,
+    handleModal,
+    totalItems,
+    totalPrice,
+    handleInc,
+    cart,
+    handleDec,
+    handleDelete,
+  } = useCartContext();
 
   return (
     <aside>
@@ -51,19 +49,19 @@ const Sidebar = ({ cart, onInc, onDec, onDel, onReset }) => {
                       <div className="flex items-center gap-4">
                         <button
                           className="button-circle"
-                          onClick={() => onDec(cartItem)}>
+                          onClick={() => handleDec(cartItem)}>
                           -
                         </button>
                         <span className="font-semibold">{quantity}</span>
                         <button
                           className="button-circle"
-                          onClick={() => onInc(cartItem)}>
+                          onClick={() => handleInc(cartItem)}>
                           +
                         </button>
                       </div>
                       <button
                         className="opacity-55 text-right"
-                        onClick={() => onDel(cartItem)}>
+                        onClick={() => handleDelete(cartItem)}>
                         Șterje
                       </button>
                     </div>
@@ -87,14 +85,7 @@ const Sidebar = ({ cart, onInc, onDec, onDel, onReset }) => {
               Rupe portofelu'
             </button>
 
-            {modal && (
-              <Modal
-                cartItems={cart}
-                totalPrice={totalPrice}
-                onClose={handleCloseModal}
-                onReset={onReset}
-              />
-            )}
+            {modal && <Modal />}
           </>
         )}
       </div>
